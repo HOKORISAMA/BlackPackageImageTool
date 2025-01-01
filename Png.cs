@@ -37,6 +37,7 @@ namespace BlackPackageImageTool
                 Marshal.Copy(bmpData.Scan0, pixelBytes, 0, pixelBytes.Length);
                 bitmap.UnlockBits(bmpData);
 
+                // It's set to zero for now as it's the only algorithm working for packing right now.
                 type = 0;
                 // Create packer and pack data
                 var packer = new Packer(pixelBytes, bitmap.Width, bitmap.Height, type);
